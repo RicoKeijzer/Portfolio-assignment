@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-assignment",
+  "version": "1.0.0",
+  "description": "my portfolio assignment for LUT course: front end 2023/24.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "Rico Keijzer",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
