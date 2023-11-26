@@ -1,0 +1,32 @@
+$primary-color: #fff;
+$secondary-color: #b0d2ee;
+$selected-color: #222dd4;
+$secondary-background: #1b2227;
+$primary-contrast-color: #1b2227;
+$headerheight: 75px;
+$header-extended-height: 400px;
+
+// Media Query Mixins
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXl {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}

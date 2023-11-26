@@ -1,0 +1,99 @@
+#scroll-container {
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+  position: fixed;
+  overflow: scroll; }
+
+header {
+  z-index: 3;
+  position: fixed;
+  left: 0vw;
+  right: 0vw;
+  top: 0px;
+  height: 75px; }
+
+#menu-logo {
+  float: left;
+  margin-left: 50px;
+  background: #b0d2ee;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 50px;
+  width: 300px;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease-out; }
+  #menu-logo > h1 {
+    color: #fff;
+    text-wrap: nowrap;
+    text-align: center; }
+  #menu-logo.show {
+    opacity: 1;
+    transition: opacity 0.5s ease-out; }
+
+#menu-nav {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  margin-right: 50px;
+  overflow: hidden;
+  background-color: transparent; }
+  #menu-nav.show-menu {
+    background: #fff; }
+  #menu-nav.show-menu > div {
+    transform: translateY(0px); }
+
+#menu-nav > div {
+  transform: translateY(-100px); }
+
+.nav-item {
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  background: #fff;
+  transition: transform 0.5s ease-out; }
+  .nav-item > p {
+    color: #1b2227;
+    text-wrap: nowrap;
+    text-align: center; }
+
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
+@media screen and (min-width: 1171px) {
+  #scroll-container {
+    background-color: blue; } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  #scroll-container {
+    background-color: yellow; } }
+
+@media screen and (max-width: 768px) {
+  #scroll-container {
+    background-color: red; } }
+
+@media screen and (max-width: 500px) {
+  #scroll-container {
+    background-color: green; }
+  #menu-logo {
+    margin-left: 15px; }
+  #menu-nav {
+    flex-flow: column wrap;
+    margin-right: 0px; }
+    #menu-nav.show-menu > div {
+      transform: translateX(0px); }
+  #menu-nav > div {
+    transform: translateX(100px); } }

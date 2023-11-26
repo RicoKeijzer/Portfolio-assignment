@@ -1,0 +1,48 @@
+@import "config";
+// Widescreens
+@include mediaXl {
+  #scroll-container {
+    background-color: blue;
+  }
+}
+
+// Desktops & Laptops
+@include mediaLg {
+  #scroll-container {
+    background-color: yellow;
+  }
+}
+
+// Tablets & Small Laptops
+@include mediaMd {
+  #scroll-container {
+    background-color: red;
+  }
+}
+
+// Smartphones
+@include mediaSm {
+  #scroll-container {
+    background-color: green;
+  }
+
+  // header and navigation menu
+  #menu {
+    &-logo {
+      margin-left: 15px;
+    }
+
+    &-nav {
+      flex-flow: column wrap;
+      margin-right: 0px;
+
+      &.show-menu > div {
+        transform: translateX(0px);
+      }
+    }
+
+    &-nav > div {
+      transform: translateX(100px);
+    }
+  }
+}
