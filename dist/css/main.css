@@ -1,11 +1,3 @@
-#scroll-container {
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  top: 0px;
-  position: fixed;
-  overflow: scroll; }
-
 header {
   z-index: 3;
   position: fixed;
@@ -74,20 +66,147 @@ header {
   transition-delay: 0.4s; }
 
 @media screen and (min-width: 1171px) {
-  #scroll-container {
-    background-color: blue; } }
+  #scroll-containerp {
+    color: blue; } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
-  #scroll-container {
-    background-color: yellow; } }
+  #scroll-containerp {
+    color: yellow; } }
 
 @media screen and (max-width: 768px) {
-  #scroll-container {
-    background-color: red; } }
+  #scroll-containerp {
+    color: red; } }
 
 @media screen and (max-width: 500px) {
-  #scroll-container {
-    background-color: green; }
+  #scroll-containerp {
+    color: green; }
+  #menu-logo {
+    margin-left: 15px; }
+  #menu-nav {
+    flex-flow: column wrap;
+    margin-right: 0px; }
+    #menu-nav.show-menu > div {
+      transform: translateX(0px); }
+  #menu-nav > div {
+    transform: translateX(100px); } }
+
+.slider-container {
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+  position: fixed;
+  z-index: -3;
+  transform: translateY(0px);
+  transition: transform 0.5s ease-out; }
+  .slider-container.show-menu {
+    transform: translateY(75px);
+    transition: transform 0.5s ease-out; }
+
+.slide-1 {
+  transition: all 0.5s ease-in;
+  background-repeat: no-repeat;
+  background-size: cover;
+  scroll-snap-align: start;
+  left: 0px;
+  right: 0px;
+  background: url(../img/bg_imgA.jpg); }
+
+.slide-2 {
+  transition: all 0.5s ease-in;
+  background-repeat: no-repeat;
+  background-size: cover;
+  scroll-snap-align: start;
+  left: 0px;
+  right: 0px;
+  background: url(../img/bg_imgB.jpg); }
+
+.slide-3 {
+  transition: all 0.5s ease-in;
+  background-repeat: no-repeat;
+  background-size: cover;
+  scroll-snap-align: start;
+  left: 0px;
+  right: 0px;
+  background: url(../img/bg_imgC.jpg); }
+
+.slide-4 {
+  transition: all 0.5s ease-in;
+  background-repeat: no-repeat;
+  background-size: cover;
+  scroll-snap-align: start;
+  left: 0px;
+  right: 0px;
+  background: url(../img/bg_imgD.jpg); }
+
+/*
+
+.img {
+  transition: all 0.5s ease-in;
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  scroll-snap-align: start;
+
+  left: 0px;
+  right: 0px;
+
+  &.slide-1 {
+    background: $slide_1;
+    background-color: blue;
+  }
+
+  &.slide-2 {
+    background: $slide_2;
+    background-color: yellow;
+  }
+
+  &.slide-3 {
+    background: $slide_3;
+    background-color: green;
+  }
+
+  &.slide-4 {
+    background: $slide_4;
+    background-color: red;
+  }
+}
+*/
+body {
+  z-index: -10; }
+
+#scroll-container {
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+  position: fixed;
+  overflow: scroll; }
+
+section {
+  left: 0px;
+  right: 0px;
+  height: 100vh;
+  padding-left: 50px;
+  padding-right: 50px;
+  z-index: 2;
+  border: 1px solid red; }
+
+@media screen and (min-width: 1171px) {
+  #scroll-containerp {
+    color: blue; } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  #scroll-containerp {
+    color: yellow; } }
+
+@media screen and (max-width: 768px) {
+  #scroll-containerp {
+    color: red; } }
+
+@media screen and (max-width: 500px) {
+  #scroll-containerp {
+    color: green; }
   #menu-logo {
     margin-left: 15px; }
   #menu-nav {

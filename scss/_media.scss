@@ -2,28 +2,36 @@
 // Widescreens
 @include mediaXl {
   #scroll-container {
-    background-color: blue;
+    &p {
+      color: blue;
+    }
   }
 }
 
 // Desktops & Laptops
 @include mediaLg {
   #scroll-container {
-    background-color: yellow;
+    &p {
+      color: yellow;
+    }
   }
 }
 
 // Tablets & Small Laptops
 @include mediaMd {
   #scroll-container {
-    background-color: red;
+    &p {
+      color: red;
+    }
   }
 }
 
 // Smartphones
 @include mediaSm {
   #scroll-container {
-    background-color: green;
+    &p {
+      color: green;
+    }
   }
 
   // header and navigation menu

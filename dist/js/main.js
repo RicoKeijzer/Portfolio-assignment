@@ -22,9 +22,12 @@ const menuHeight = 50; //vh
 
 //initialize html elements
 // for header
-const header = document.getElementById("main-header");
-const menuLogo = document.getElementById("menu-logo");
-const menuNav = document.getElementById("menu-nav");
+//const header = document.querySelector("#main-header");
+const menuLogo = document.querySelector("#menu-logo");
+const menuNav = document.querySelector("#menu-nav");
+
+// for background sliders
+const sliderContainer = document.querySelector(".slider-container");
 
 // scrollin event for listeners
 scrollContainer.addEventListener("scroll", () => {
@@ -48,12 +51,12 @@ scrollContainer.addEventListener("scroll", () => {
   if (!headerState.show && newScrollTop <= menuHeight) {
     headerState.show = true;
     updateMenuState(menuLogo, true, "show");
-    //updateMenuState(sliderContainer, true, "show-menu");
+    updateMenuState(sliderContainer, true, "show-menu");
     console.log("show header");
   } else if (headerState.show && newScrollTop > menuHeight) {
     headerState.show = false;
     updateMenuState(menuLogo, false, "show");
-    //updateMenuState(sliderContainer, false, "show-menu");
+    updateMenuState(sliderContainer, false, "show-menu");
   }
 
   //next we will check the show menu state separatly
@@ -74,4 +77,41 @@ scrollContainer.addEventListener("scroll", () => {
 
   // update scrolltop counter to current counter
   scrollTop = newScrollTop;
+
+  //------------------------------------------//
+  //- THIS SECTION WILL CHECK THE PAGE STATE -//
+  //------------------------------------------//
+
+  // declare updateElement as higher order function to replace classes
+  const updateElement = (item, tag, index) => {
+    if (item.includes(tag)) {
+      sliderContainer.classList.replace(item, `${tag}${index}`);
+    }
+  };
+
+  // declare updateSlide to iterate over classes and update the slide classes
+  const updateSlide = (index) => {
+    sliderContainer.classList.forEach((x) => {
+      updateElement(x, "slide-", index);
+    });
+  };
+
+  // for the first page we want to remove half of the innerheight as a benchmark for when the first page is over.
+  // all pages after are based on scrolling distance / innerheight. + 2 to compensate for the first page.
+  let ii = newScrollTop - viewHeight / 2;
+
+  if (ii <= 0) {
+    if (pageState != 1) {
+      pageState = 1;
+      console.log("page #1");
+      updateSlide(1);
+    }
+  } else {
+    const jj = Math.floor(ii / viewHeight) + 2;
+    if (pageState != jj) {
+      pageState = jj;
+      console.log(`page #${jj}`);
+      updateSlide(jj);
+    }
+  }
 });
