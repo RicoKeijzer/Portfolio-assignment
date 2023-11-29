@@ -1,3 +1,9 @@
+$primary-light-color: #ffffff;
+$primary-dark-color: #0e0e0e;
+
+$footer-primary-color: #ffffff;
+$footer-secondary-color: #d0d0d0;
+
 $primary-color: #fff;
 $secondary-color: #b0d2ee;
 $selected-color: #222dd4;
@@ -5,6 +11,23 @@ $secondary-background: #1b2227;
 $primary-contrast-color: #1b2227;
 $headerheight: 75px;
 $header-extended-height: 400px;
+
+@mixin easeIn {
+  transition: all 0.5s ease-in;
+}
+
+@mixin easeInOut {
+  transition: all 0.5s ease-in-out;
+}
+
+// set text color
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
 
 // Media Query Mixins
 @mixin mediaSm {

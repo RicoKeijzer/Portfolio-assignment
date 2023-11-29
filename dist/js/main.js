@@ -98,20 +98,23 @@ scrollContainer.addEventListener("scroll", () => {
 
   // for the first page we want to remove half of the innerheight as a benchmark for when the first page is over.
   // all pages after are based on scrolling distance / innerheight. + 2 to compensate for the first page.
-  let ii = newScrollTop - viewHeight / 2;
-
-  if (ii <= 0) {
+  let relativeScrollLocation = newScrollTop - viewHeight / 2;
+  const slideCounter =
+    document.getElementsByClassName("slide-section").length + 1;
+  console.log(slideCounter);
+  if (relativeScrollLocation <= 0) {
     if (pageState != 1) {
       pageState = 1;
       console.log("page #1");
       updateSlide(1);
     }
   } else {
-    const jj = Math.floor(ii / viewHeight) + 2;
-    if (pageState != jj) {
-      pageState = jj;
-      console.log(`page #${jj}`);
-      updateSlide(jj);
+    const relativeScrollPage =
+      Math.floor(relativeScrollLocation / viewHeight) + 2;
+    if (pageState != relativeScrollPage && slideCounter > relativeScrollPage) {
+      pageState = relativeScrollPage;
+      console.log(`page #${relativeScrollPage}`);
+      updateSlide(relativeScrollPage);
     }
   }
 });

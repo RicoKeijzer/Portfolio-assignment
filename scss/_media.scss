@@ -6,6 +6,16 @@
       color: blue;
     }
   }
+
+  section {
+    &.left-sided {
+      padding-right: 65%;
+    }
+
+    &.right-sided {
+      padding-left: 65%;
+    }
+  }
 }
 
 // Desktops & Laptops
@@ -19,10 +29,31 @@
 
 // Tablets & Small Laptops
 @include mediaMd {
+  p {
+    font-size: 1em;
+  }
+
   #scroll-container {
     &p {
       color: red;
     }
+  }
+
+  section {
+    &.left-sided {
+      padding-right: 30%;
+    }
+
+    &.right-sided {
+      padding-left: 30%;
+    }
+  }
+
+  .portfolio {
+    min-height: 60vh;
+  }
+  .content {
+    flex: 40%;
   }
 }
 
@@ -32,6 +63,30 @@
     &p {
       color: green;
     }
+  }
+
+  section {
+    &.left-sided {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    &.right-sided {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+
+  .portfolio {
+    min-height: 80vh;
+    width: 60vw;
+
+    grid-template-columns: 50vw;
+    justify-items: center;
+  }
+  //makes columns in portfolio
+  .content {
+    flex: 60%;
   }
 
   // header and navigation menu

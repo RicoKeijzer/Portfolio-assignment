@@ -4,6 +4,8 @@ $slide_1: url(../img/bg_imgA.jpg);
 $slide_2: url(../img/bg_imgB.jpg);
 $slide_3: url(../img/bg_imgC.jpg);
 $slide_4: url(../img/bg_imgD.jpg);
+$slide_5: url(../img/bg_imgE.jpg);
+$slide_6: url(../img/bg_imgF.jpg);
 
 // background slider section
 .slider-container {
@@ -11,8 +13,13 @@ $slide_4: url(../img/bg_imgD.jpg);
   right: 0px;
   bottom: 0px;
   top: 0px;
-  position: fixed;
+
   z-index: -3;
+  position: fixed;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  scroll-snap-align: start;
 
   transform: translateY(0px);
   transition: transform 0.5s ease-out;
@@ -21,83 +28,33 @@ $slide_4: url(../img/bg_imgD.jpg);
     transform: translateY(75px);
     transition: transform 0.5s ease-out;
   }
-}
 
-.slide-1 {
-  transition: all 0.5s ease-in;
-  background-repeat: no-repeat;
-  background-size: cover;
-  scroll-snap-align: start;
-  left: 0px;
-  right: 0px;
-
-  background: $slide_1;
-}
-
-.slide-2 {
-  transition: all 0.5s ease-in;
-  background-repeat: no-repeat;
-  background-size: cover;
-  scroll-snap-align: start;
-  left: 0px;
-  right: 0px;
-
-  background: $slide_2;
-}
-
-.slide-3 {
-  transition: all 0.5s ease-in;
-  background-repeat: no-repeat;
-  background-size: cover;
-  scroll-snap-align: start;
-  left: 0px;
-  right: 0px;
-
-  background: $slide_3;
-}
-
-.slide-4 {
-  transition: all 0.5s ease-in;
-  background-repeat: no-repeat;
-  background-size: cover;
-  scroll-snap-align: start;
-  left: 0px;
-  right: 0px;
-
-  background: $slide_4;
-}
-
-/*
-
-.img {
-  transition: all 0.5s ease-in;
-  background-repeat: no-repeat;
-
-  background-size: cover;
-  scroll-snap-align: start;
-
-  left: 0px;
-  right: 0px;
+  // transition for all images
+  transition: background-image 0.5s ease-in;
 
   &.slide-1 {
     background: $slide_1;
-    background-color: blue;
   }
 
   &.slide-2 {
     background: $slide_2;
-    background-color: yellow;
   }
 
   &.slide-3 {
     background: $slide_3;
-    background-color: green;
   }
 
   &.slide-4 {
     background: $slide_4;
-    background-color: red;
+  }
+
+  &.slide-5 {
+    background: $slide_5;
+  }
+
+  &.slide-6 {
+    background: $slide_6;
   }
 }
-*/
-//@import "media";
+
+@import "media";
