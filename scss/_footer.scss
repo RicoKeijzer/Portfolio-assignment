@@ -1,0 +1,60 @@
+footer {
+  width: 100%;
+  background-color: $footer-primary-color;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  .pre-footer {
+    min-height: 500px;
+    padding: 25px;
+  }
+  .main-footer {
+    min-height: 200px;
+    background-color: $footer-secondary-color;
+    padding: 15px;
+  }
+}
+
+//work and projects
+.footer-container {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(5, 300px);
+
+  .item {
+    width: 100%;
+    min-height: 300px;
+    border: #fff 3px solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeInOut;
+    }
+  }
+}
+
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background-color: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+}

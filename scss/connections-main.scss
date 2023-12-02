@@ -1,0 +1,121 @@
+$connection-primary-color: #fbfdff;
+$connection-secondary-color: #e5f0f8;
+$connection-selected-color: #40436e;
+$connection-background-color: #dbdbdb;
+$rounding: 10px;
+$connection-padding: 10px;
+
+.connection-game {
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: $connection-padding;
+
+  // this section is duplicated
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+
+  &-btn {
+    margin-top: $connection-padding;
+    width: 100%;
+    cursor: pointer;
+
+    // this section is duplicated
+    border: 2px solid $connection-secondary-color;
+    background-color: $connection-primary-color;
+    border-radius: $rounding;
+
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    text-align: center;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+  }
+}
+
+.grid-item {
+  cursor: pointer;
+
+  // this section is duplicated
+  border: 2px solid $connection-secondary-color;
+  background-color: $connection-primary-color;
+  border-radius: $rounding;
+
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  &:hover {
+    background-color: darken($connection-primary-color, 10%);
+    color: $connection-primary-color;
+  }
+
+  &.selected {
+    background-color: $connection-selected-color;
+    border: 1px solid #ccc;
+  }
+
+  // is this section still working
+  &.moving {
+    transform: translate(-100px, 30px);
+    transition-property: transform translate(-150px, 30px);
+    transition-timing-function: ease-out;
+    transition-duration: 1s;
+  }
+}
+
+.grid-item-win-row {
+  &-1 {
+    background-color: lighten(red, 30);
+
+    // this section is duplicated
+    grid-column: 1 / 5;
+    border-radius: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+    font-size: 24px;
+  }
+  &-2 {
+    background-color: lighten(green, 30);
+
+    // this section is duplicated
+    grid-column: 1 / 5;
+    border-radius: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  &-3 {
+    background-color: lighten(blue, 30);
+
+    // this section is duplicated
+    grid-column: 1 / 5;
+    border-radius: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+    font-size: 24px;
+  }
+  &-4 {
+    background-color: lighten(yellow, 30);
+
+    // this section is duplicated
+    grid-column: 1 / 5;
+    border-radius: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+    font-size: 24px;
+  }
+}

@@ -1,3 +1,19 @@
+// Select DOM Items
+const contentItems = document.querySelectorAll(".content");
+const contentCloser = document.querySelector(".content-closer");
+
+contentItems.forEach((contentItem) => {
+  contentItem.addEventListener("click", (e) => {
+    const classes = contentItem.classList.contains("selected-day");
+    if (classes) {
+      contentItem.classList.remove("selected-day");
+    } else {
+      contentItem.classList.add("selected-day");
+      contentCloser.classList.add("content-open");
+    }
+  });
+});
+
 //-----------------------------//
 //-------background slides-----//
 //-----------------------------//

@@ -20,6 +20,15 @@ $header-extended-height: 400px;
   transition: all 0.5s ease-in-out;
 }
 
+@mixin noTransition {
+  transition: all none;
+}
+
+@mixin easeOutColors {
+  transition: fill 0.5s ease-out;
+  transition: color 0.5s ease-out;
+}
+
 // set text color
 @function set-text-color($color) {
   @if (lightness($color) > 40) {

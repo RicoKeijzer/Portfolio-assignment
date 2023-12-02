@@ -1,0 +1,132 @@
+.portfolio {
+  //edit styling
+  border-radius: 15px;
+  background: rgba($primary-light-color, 0.7);
+
+  display: flex;
+  //flex-direction: row;
+  gap: 20px;
+  //align-items: stretch;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  //list-style: none;
+  //flex-wrap: wrap;
+  padding: 20px;
+
+  //display: grid;
+  //grid-gap: 0.7rem;
+  //grid-template-columns: repeat(4, 1fr);
+}
+
+.content {
+  width: 350px;
+  height: 350px;
+
+  cursor: pointer;
+
+  $fill: orange;
+  @include easeIn;
+
+  background-color: lighten($fill, 40%);
+  border: 3px solid $fill;
+
+  text {
+    font: bold 16em Verdana, Helvetica, Arial, sans-serif;
+    text-anchor: middle;
+    fill: darken($fill, 30%);
+
+    &.small {
+      font: bold 1em Verdana, Helvetica, Arial, sans-serif;
+    }
+  }
+
+  .color-1 {
+    fill: $fill;
+    color: $fill;
+  }
+
+  .color-2 {
+    fill: lighten($fill, 20%);
+  }
+
+  &:hover {
+    @include easeIn;
+    background-color: lighten($fill, 30%);
+
+    .color-1 {
+      fill: darken($fill, 10%);
+      color: darken($fill, 10%);
+    }
+
+    .color-2 {
+      fill: lighten($fill, 10%);
+      //@include easeInOut;
+    }
+  }
+
+  svg {
+    z-index: 7;
+  }
+
+  iframe {
+    z-index: 8;
+    width: calc(100vw - 250px);
+    height: calc(100vh - 250px);
+    left: 125px;
+    right: 125px;
+    bottom: 125px;
+    top: 125px;
+    visibility: hidden;
+    position: fixed;
+
+    border: $fill 1px solid;
+  }
+}
+
+.selected-day {
+  @include noTransition;
+  $fill: orange;
+  width: calc(100vw - 200px);
+  height: calc(100vh - 200px);
+  left: 100px;
+  right: 100px;
+  bottom: 100px;
+  top: 100px;
+
+  position: fixed;
+
+  background-color: lighten($fill, 30%);
+
+  text {
+    fill: lighten($fill, 20%);
+  }
+  .color-1 {
+    fill: lighten($fill, 26%);
+    color: lighten($fill, 26%);
+  }
+
+  .color-2 {
+    fill: lighten($fill, 28%);
+  }
+
+  &:hover {
+    background-color: lighten($fill, 30%);
+    text {
+      fill: lighten($fill, 20%);
+    }
+    .color-1 {
+      fill: lighten($fill, 26%);
+      color: lighten($fill, 26%);
+    }
+
+    .color-2 {
+      fill: lighten($fill, 28%);
+    }
+  }
+
+  iframe {
+    visibility: visible;
+  }
+}
+
+@import "media";

@@ -2,12 +2,11 @@
 
 // header section
 header {
-  z-index: 3;
+  z-index: 10;
   position: fixed;
   left: 0vw;
   right: 0vw;
   top: 0px;
-  //background-color: rgba($color: #ffffff, $alpha: 0.7);
   height: $headerheight;
 }
 
@@ -21,19 +20,14 @@ header {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 
-    & > h1 {
-      color: $primary-color;
-      text-wrap: nowrap;
-      text-align: center;
-    }
-    //border: 1px solid red;
-    height: 50px;
-    width: 300px;
-    padding: 10px;
+    text-align: center;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: $primary-color;
+    padding: 10px 35px;
 
-    //visibility: hidden;
     opacity: 0;
     transition: opacity 0.5s ease-out;
+
     // show the hidden menu bar
     &.show {
       opacity: 1;
@@ -71,6 +65,8 @@ header {
   height: 50px;
   width: 50px;
   padding: 10px;
+
+  cursor: pointer;
 
   background: $primary-color;
 
