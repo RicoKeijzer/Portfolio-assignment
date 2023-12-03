@@ -31,18 +31,15 @@
   border: 3px solid $fill;
 
   text {
-    font: bold 16em Verdana, Helvetica, Arial, sans-serif;
+    font: bold 1em Verdana, Helvetica, Arial, sans-serif;
     text-anchor: middle;
     fill: darken($fill, 30%);
-
-    &.small {
-      font: bold 1em Verdana, Helvetica, Arial, sans-serif;
-    }
   }
 
   .color-1 {
     fill: $fill;
     color: $fill;
+    stroke: $fill;
   }
 
   .color-2 {
@@ -127,6 +124,31 @@
   iframe {
     visibility: visible;
   }
+}
+
+$slide_7: url(../svg/test.svg);
+
+@mixin element-color($color) {
+  background-image: url('data:image/svg+xml;utf8,<svg color="#{$color}...></svg>');
+}
+
+.svg-test {
+  background-image: $slide_7;
+  //background-color: aqua;
+  //@include element-color(#505050);
+  height: 1500px;
+  width: 1300px;
+
+  /* Chrome, still requires prefix in 2022 */
+  //-webkit-mask: $slide_7;
+  //-webkit-mask: var(--svg);
+
+  /* Firefox and Safari */
+  //mask: var(--svg);
+
+  //svg {
+  //  color: aqua;
+  //}
 }
 
 @import "media";

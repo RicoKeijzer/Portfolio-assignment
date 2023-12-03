@@ -81,6 +81,13 @@ header {
   // keep transition
 }
 
+$slide_8: url(../img/icons/contact.svg);
+#contacts {
+  src: $slide_8;
+  height: 800px;
+  width: 800px;
+}
+
 // for loop to make each item slower
 @for $x from 1 through 4 {
   .nav-item:nth-child(#{$x}) {

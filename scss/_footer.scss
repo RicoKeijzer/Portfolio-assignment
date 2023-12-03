@@ -1,3 +1,14 @@
+//
+$button-diameter: 45px;
+$button-border-offset: 25px;
+$github-color: #333333f0;
+$project-info-color: rgba(29, 49, 160, 0.941);
+
+// set text color
+@function set-offset-for-project-button() {
+  @return calc(100% - 70px);
+}
+
 footer {
   width: 100%;
   background-color: $footer-primary-color;
@@ -7,7 +18,12 @@ footer {
 
   .pre-footer {
     min-height: 500px;
-    padding: 25px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .main-footer {
     min-height: 200px;
@@ -16,45 +32,143 @@ footer {
   }
 }
 
+.pre-text {
+  //min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 //work and projects
 .footer-container {
   display: grid;
-  grid-gap: 0.7rem;
+  grid-gap: 2rem;
   grid-template-columns: repeat(5, 300px);
+}
 
-  .item {
-    width: 100%;
-    min-height: 300px;
-    border: #fff 3px solid;
+.item {
+  position: relative;
+  min-width: 100%;
+  min-height: 300px;
 
-    &:hover {
-      opacity: 0.5;
-      border-color: $secondary-color;
-      @include easeInOut;
-    }
+  border: #333 3px solid;
+  border-radius: 25px;
+  //padding: 5px;
+  &:hover > .item-image {
+    opacity: 0.5;
+    border-color: $secondary-color;
+    @include easeInOut;
+  }
+}
+.project-image {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.item-image {
+  > rect {
+    border-radius: 15px;
   }
 }
 
 .btn {
-  display: block;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem;
+  //positioning
+  position: absolute;
+  z-index: 6;
 
-  &:hover {
-    background-color: $secondary-color;
-    color: set-text-color($secondary-color);
+  top: set-offset-for-project-button();
+  bottom: $button-border-offset;
+
+  // positioning child elements
+  display: table-cell;
+  text-align: center; /* Centers text Horizontally */
+  vertical-align: middle; /* Centers text Vertically */
+
+  //styling
+  @include easeInOut;
+  border: black 3px solid;
+  border-radius: $button-diameter;
+  text-decoration: none;
+
+  > i {
+    position: fixed;
+  }
+
+  > h3 {
+    text-decoration: none;
+    margin: 3px;
+    visibility: hidden;
+  }
+
+  &:hover > h3 {
+    visibility: visible;
   }
 }
 
-.btn-dark {
+.btn-icon-right {
   @extend .btn;
-  background: darken($primary-color, 50);
-  color: #fff;
+  z-index: 4;
+  //positioning
+  //olor: #fff;
+  left: set-offset-for-project-button();
+  right: $button-border-offset;
+  background: $github-color;
+  color: set-text-color($github-color);
+
+  padding-top: 5px;
+  border: none;
 }
 
-.btn-light {
+.btn-right {
   @extend .btn;
-  background: lighten($primary-color, 50);
-  color: #333;
+  //positioning
+  left: set-offset-for-project-button();
+  right: $button-border-offset;
+
+  //styling
+  //background: darken($primary-color, 50);
+  background: none;
+  color: set-text-color($github-color);
+
+  &:hover {
+    @include easeInOut;
+    z-index: 5;
+    left: 25px;
+
+    background: $github-color;
+  }
+}
+
+.btn-icon-left {
+  @extend .btn;
+  z-index: 4;
+  //positioning
+  //olor: #fff;
+  left: $button-border-offset;
+  right: set-offset-for-project-button();
+  background: $project-info-color;
+  color: set-text-color($project-info-color);
+
+  padding-top: 6px;
+  border: none;
+}
+
+.btn-left {
+  @extend .btn;
+  //positioning
+  left: $button-border-offset;
+  right: set-offset-for-project-button();
+
+  //styling
+  background: none;
+
+  color: set-text-color($project-info-color);
+
+  &:hover {
+    @include easeInOut;
+    z-index: 5;
+    right: 25px;
+    background: $project-info-color;
+  }
 }

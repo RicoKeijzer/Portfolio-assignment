@@ -51,6 +51,11 @@ header {
     text-wrap: nowrap;
     text-align: center; }
 
+#contacts {
+  src: url(../img/icons/contact.svg);
+  height: 800px;
+  width: 800px; }
+
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
 
@@ -247,14 +252,13 @@ header {
   background-color: #ffedcc;
   border: 3px solid orange; }
   .content text {
-    font: bold 16em Verdana, Helvetica, Arial, sans-serif;
+    font: bold 1em Verdana, Helvetica, Arial, sans-serif;
     text-anchor: middle;
     fill: #664200; }
-    .content text.small {
-      font: bold 1em Verdana, Helvetica, Arial, sans-serif; }
   .content .color-1 {
     fill: orange;
-    color: orange; }
+    color: orange;
+    stroke: orange; }
   .content .color-2 {
     fill: #ffc966; }
   .content:hover {
@@ -307,6 +311,13 @@ header {
       fill: #ffd78f; }
   .selected-day iframe {
     visibility: visible; }
+
+.svg-test {
+  background-image: url(../svg/test.svg);
+  height: 1500px;
+  width: 1300px;
+  /* Chrome, still requires prefix in 2022 */
+  /* Firefox and Safari */ }
 
 @media screen and (min-width: 1171px) {
   #scroll-containerp {
@@ -384,41 +395,114 @@ footer {
   grid-template-columns: 1fr; }
   footer .pre-footer {
     min-height: 500px;
-    padding: 25px; }
+    padding-top: 75px;
+    padding-bottom: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   footer .main-footer {
     min-height: 200px;
     background-color: #d0d0d0;
     padding: 15px; }
 
+.pre-text {
+  display: flex;
+  justify-content: center; }
+
 .footer-container {
   display: grid;
-  grid-gap: 0.7rem;
+  grid-gap: 2rem;
   grid-template-columns: repeat(5, 300px); }
-  .footer-container .item {
-    width: 100%;
-    min-height: 300px;
-    border: #fff 3px solid; }
-    .footer-container .item:hover {
-      opacity: 0.5;
-      border-color: #b0d2ee;
-      transition: all 0.5s ease-in-out; }
 
-.btn, .btn-dark, .btn-light {
-  display: block;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem; }
-  .btn:hover, .btn-dark:hover, .btn-light:hover {
-    background-color: #b0d2ee;
-    color: #000; }
+.item {
+  position: relative;
+  min-width: 100%;
+  min-height: 300px;
+  border: #333 3px solid;
+  border-radius: 25px; }
+  .item:hover > .item-image {
+    opacity: 0.5;
+    border-color: #b0d2ee;
+    transition: all 0.5s ease-in-out; }
 
-.btn-dark {
-  background: gray;
+.project-image {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 25px; }
+
+.item-image > rect {
+  border-radius: 15px; }
+
+.btn, .btn-icon-right, .btn-right, .btn-icon-left, .btn-left {
+  position: absolute;
+  z-index: 6;
+  top: calc(100% - 70px);
+  bottom: 25px;
+  display: table-cell;
+  text-align: center;
+  /* Centers text Horizontally */
+  vertical-align: middle;
+  /* Centers text Vertically */
+  transition: all 0.5s ease-in-out;
+  border: black 3px solid;
+  border-radius: 45px;
+  text-decoration: none; }
+  .btn > i, .btn-icon-right > i, .btn-right > i, .btn-icon-left > i, .btn-left > i {
+    position: fixed; }
+  .btn > h3, .btn-icon-right > h3, .btn-right > h3, .btn-icon-left > h3, .btn-left > h3 {
+    text-decoration: none;
+    margin: 3px;
+    visibility: hidden; }
+  .btn:hover > h3, .btn-icon-right:hover > h3, .btn-right:hover > h3, .btn-icon-left:hover > h3, .btn-left:hover > h3 {
+    visibility: visible; }
+
+.btn-icon-right {
+  z-index: 4;
+  left: calc(100% - 70px);
+  right: 25px;
+  background: #333333f0;
+  color: #fff;
+  padding-top: 5px;
+  border: none; }
+
+.btn-right {
+  left: calc(100% - 70px);
+  right: 25px;
+  background: none;
   color: #fff; }
+  .btn-right:hover {
+    transition: all 0.5s ease-in-out;
+    z-index: 5;
+    left: 25px;
+    background: #333333f0; }
 
-.btn-light {
-  background: white;
-  color: #333; }
+.btn-icon-left {
+  z-index: 4;
+  left: 25px;
+  right: calc(100% - 70px);
+  background: rgba(29, 49, 160, 0.941);
+  color: #fff;
+  padding-top: 6px;
+  border: none; }
+
+.btn-left {
+  left: 25px;
+  right: calc(100% - 70px);
+  background: none;
+  color: #fff; }
+  .btn-left:hover {
+    transition: all 0.5s ease-in-out;
+    z-index: 5;
+    right: 25px;
+    background: rgba(29, 49, 160, 0.941); }
+
+rect {
+  width: 100%;
+  height: 100%; }
+  rect.dialogonal {
+    fill: url(#diagonalHatch);
+    color: orange; }
 
 body {
   z-index: -10;

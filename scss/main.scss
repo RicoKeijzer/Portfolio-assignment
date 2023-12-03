@@ -4,6 +4,18 @@
 @import "boxes";
 @import "footer";
 
+rect {
+  //
+  width: 100%;
+  height: 100%;
+
+  &.dialogonal {
+    //fill: url(#pattern-checkers);
+    fill: url(#diagonalHatch);
+    color: orange;
+  }
+}
+
 body {
   //  background-color: #fff;
   z-index: -10;
