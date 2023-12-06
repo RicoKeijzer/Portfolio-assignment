@@ -12,23 +12,6 @@
     />
 
     <title>portfolio example</title>
-
-    <!--will we use this???-->
-    <svg>
-      <defs>
-        <pattern
-          id="diagonalHatch"
-          patternUnits="userSpaceOnUse"
-          width="4"
-          height="4"
-        >
-          <path
-            d="M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2"
-            style="stroke: orange; stroke-width: 1"
-          ></path>
-        </pattern>
-      </defs>
-    </svg>
   </head>
   <body>
     <!----------------------------------------->
@@ -75,7 +58,7 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga nam sit tenetur m
           </section>
 
         <!--Section 2-->
-<div id="nav-about-me">
+    <div id="nav-about-me">
         <section class="slide-section" >
           <section class="sub-section left-sided">
             <!--upper section content-->
@@ -117,27 +100,28 @@ Hope you like my portfolio template. Feel free to use any of the code except the
 
       </div>
         <footer>
+          <div id="nav-projects">
           <div class="pre-text">
             <h1>These are some of the project I created</h1>
           </div>
-          <div class="pre-footer" id="nav-projects">
+          <div class="pre-footer" >
             <div class="footer-container">
+              
+              <!--first column-->
+              <div class="projects-column">
+              
               <!--New project item-->
-              <div class="item">
-                <a class="item-image" href="#!">
+              <div class="item large" style="background-color: #B4A7FF;">
+                <a class="item-image" id="connection-project"  href="#!">
                   <!--start or content or image-->
-                  <svg viewBox="0 0 24 24" color="#697178">
-                    <rect
-                      x="0"
-                      y="0"
-                      width="100%"
-                      height="100%"
-                      fill="url(#diagonalHatch)"
-                    ></rect>
-                  </svg>
+                  <img
+                  class="project-image"
+                  src="img/projects/connections-logo.jpg"
+                  alt="project"
+                />
                   <!--end or content or image-->
                 </a>
-                <a href="#" class="btn-left">
+                <a href="connections.html" class="btn-left">
                   <h3>See project info</h3>
                 </a>
                 <i class="btn-icon-left fas fa-info fa-2x"></i>
@@ -146,9 +130,12 @@ Hope you like my portfolio template. Feel free to use any of the code except the
                 </a>
                 <i class="btn-icon-right fab fa-github fa-2x"></i>
               </div>
+            </div>
 
+            <!--second column-->
+            <div class="projects-column">
               <!--New project item-->
-              <div class="item">
+              <div class="item medium" style="background-color: #30b93b;">
                 <a class="item-image" href="#!">
                   <!--start or content or image-->
                   <img
@@ -169,7 +156,7 @@ Hope you like my portfolio template. Feel free to use any of the code except the
               </div>
 
               <!--New project item-->
-              <div class="item">
+              <div class="item flex" style="background-color: #7e1296;">
                 <a class="item-image" href="#!">
                   <!--start or content or image-->
                   <svg viewBox="0 0 24 24" color="#697178">
@@ -181,165 +168,6 @@ Hope you like my portfolio template. Feel free to use any of the code except the
                       fill="url(#diagonalHatch)"
                     ></rect>
                   </svg>
-                  <!--end or content or image-->
-                </a>
-                <a href="#" class="btn-left">
-                  <h3>See project info</h3>
-                </a>
-                <i class="btn-icon-left fas fa-info fa-2x"></i>
-                <a href="#" class="btn-right">
-                  <h3>See GitHub repo</h3>
-                </a>
-                <i class="btn-icon-right fab fa-github fa-2x"></i>
-              </div>
-
-              <!--New project item-->
-              <div class="item">
-                <a class="item-image" href="#!">
-                  <!--start or content or image-->
-                  <img
-                    class="project-image"
-                    src="img/projects/example.png"
-                    alt="project"
-                  />
-                  <!--end or content or image-->
-                </a>
-                <a href="#" class="btn-left">
-                  <h3>See project info</h3>
-                </a>
-                <i class="btn-icon-left fas fa-info fa-2x"></i>
-                <a href="#" class="btn-right">
-                  <h3>See GitHub repo</h3>
-                </a>
-                <i class="btn-icon-right fab fa-github fa-2x"></i>
-              </div>
-
-              <!--New project item-->
-              <div class="item">
-                <a class="item-image" href="#!">
-                  <!--start or content or image-->
-                  <svg viewBox="0 0 24 24" color="#697178">
-                    <rect
-                      x="0"
-                      y="0"
-                      width="100%"
-                      height="100%"
-                      fill="url(#diagonalHatch)"
-                    ></rect>
-                  </svg>
-                  <!--end or content or image-->
-                </a>
-                <a href="#" class="btn-left">
-                  <h3>See project info</h3>
-                </a>
-                <i class="btn-icon-left fas fa-info fa-2x"></i>
-                <a href="#" class="btn-right">
-                  <h3>See GitHub repo</h3>
-                </a>
-                <i class="btn-icon-right fab fa-github fa-2x"></i>
-              </div>
-
-              <!--New project item-->
-              <div class="item">
-                <a class="item-image" href="#!">
-                  <!--start or content or image-->
-                  <img
-                    class="project-image"
-                    src="img/projects/example.png"
-                    alt="project"
-                  />
-                  <!--end or content or image-->
-                </a>
-                <a href="#" class="btn-left">
-                  <h3>See project info</h3>
-                </a>
-                <i class="btn-icon-left fas fa-info fa-2x"></i>
-                <a href="#" class="btn-right">
-                  <h3>See GitHub repo</h3>
-                </a>
-                <i class="btn-icon-right fab fa-github fa-2x"></i>
-              </div>
-
-              <!--New project item-->
-              <div class="item">
-                <a class="item-image" href="#!">
-                  <!--start or content or image-->
-                  <svg viewBox="0 0 24 24" color="#697178">
-                    <rect
-                      x="0"
-                      y="0"
-                      width="100%"
-                      height="100%"
-                      fill="url(#diagonalHatch)"
-                    ></rect>
-                  </svg>
-                  <!--end or content or image-->
-                </a>
-                <a href="#" class="btn-left">
-                  <h3>See project info</h3>
-                </a>
-                <i class="btn-icon-left fas fa-info fa-2x"></i>
-                <a href="#" class="btn-right">
-                  <h3>See GitHub repo</h3>
-                </a>
-                <i class="btn-icon-right fab fa-github fa-2x"></i>
-              </div>
-
-              <!--New project item-->
-              <div class="item">
-                <a class="item-image" href="#!">
-                  <!--start or content or image-->
-                  <img
-                    class="project-image"
-                    src="img/projects/example.png"
-                    alt="project"
-                  />
-                  <!--end or content or image-->
-                </a>
-                <a href="#" class="btn-left">
-                  <h3>See project info</h3>
-                </a>
-                <i class="btn-icon-left fas fa-info fa-2x"></i>
-                <a href="#" class="btn-right">
-                  <h3>See GitHub repo</h3>
-                </a>
-                <i class="btn-icon-right fab fa-github fa-2x"></i>
-              </div>
-
-              <!--New project item-->
-              <div class="item">
-                <a class="item-image" href="#!">
-                  <!--start or content or image-->
-                  <svg viewBox="0 0 24 24" color="#697178">
-                    <rect
-                      x="0"
-                      y="0"
-                      width="100%"
-                      height="100%"
-                      fill="url(#diagonalHatch)"
-                    ></rect>
-                  </svg>
-                  <!--end or content or image-->
-                </a>
-                <a href="#" class="btn-left">
-                  <h3>See project info</h3>
-                </a>
-                <i class="btn-icon-left fas fa-info fa-2x"></i>
-                <a href="#" class="btn-right">
-                  <h3>See GitHub repo</h3>
-                </a>
-                <i class="btn-icon-right fab fa-github fa-2x"></i>
-              </div>
-
-              <!--New project item-->
-              <div class="item">
-                <a class="item-image" href="#!">
-                  <!--start or content or image-->
-                  <img
-                    class="project-image"
-                    src="img/projects/example.png"
-                    alt="project"
-                  />
                   <!--end or content or image-->
                 </a>
                 <a href="#" class="btn-left">
@@ -352,7 +180,79 @@ Hope you like my portfolio template. Feel free to use any of the code except the
                 <i class="btn-icon-right fab fa-github fa-2x"></i>
               </div>
             </div>
+             
+             <!--third column-->
+            <div class="projects-column"  >
+              <!--New project item-->
+              <div class="item large" style="background-color: #FFF4C6;">
+                <a class="item-image" href="#!">
+                  <!--start or content or image-->
+                  <!--<h2>Journal</h2>-->
+                  <img
+                    class="project-image"
+                    src="img/projects/journal-logo.png"
+                    alt="project"
+                  />
+                  <!--end or content or image-->
+                </a>
+                <a href="journal.html" class="btn-left">
+                  <h3>See project info</h3>
+                </a>
+                <i class="btn-icon-left fas fa-info fa-2x"></i>
+                <a href="#" class="btn-right">
+                  <h3>See GitHub repo</h3>
+                </a>
+                <i class="btn-icon-right fab fa-github fa-2x"></i>
+              </div>
+            </div>
+
+             <!--fourth column-->
+            <div class="projects-column">
+
+
+
+              <!--New project item-->
+              <div class="item small" style="background-color: #e77d20;">
+                <a class="item-image" href="#!">
+                  <!--start or content or image-->
+                  <img
+                    class="project-image"
+                    src="img/projects/example.png"
+                    alt="project"
+                  />
+                  <!--end or content or image-->
+                </a>
+                <a href="#" class="btn-left">
+                  <h3>See project info</h3>
+                </a>
+                <i class="btn-icon-left fas fa-info fa-2x"></i>
+                <a href="#" class="btn-right">
+                  <h3>See GitHub repo</h3>
+                </a>
+                <i class="btn-icon-right fab fa-github fa-2x"></i>
+              </div>
+
+              <!--New project item-->
+              <div class="item flex" style="background-color: #2a4daf;">
+                <a class="item-image" href="#!">
+                  <!--start or content or image-->
+           
+                  <!--end or content or image-->
+                </a>
+                <a href="#" class="btn-left">
+                  <h3>See project info</h3>
+                </a>
+                <i class="btn-icon-left fas fa-info fa-2x"></i>
+                <a href="#" class="btn-right">
+                  <h3>See GitHub repo</h3>
+                </a>
+                <i class="btn-icon-right fab fa-github fa-2x"></i>
+              </div>
+            </div>
+          
+            </div>
           </div>
+        </div>
           <div class="main-footer" id="nav-contacts">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
@@ -368,6 +268,11 @@ Hope you like my portfolio template. Feel free to use any of the code except the
               obcaecati quam similique repellat modi aliquid? Nulla laborum sint
               expedita quidem dolorum perferendis.
             </p>
+
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254498.04811348094!2d24.68905953387385!3d60.1100963639758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920bc796210691%3A0xcd4ebd843be2f763!2sHelsinki!5e0!3m2!1sen!2sfi!4v1701891743863!5m2!1sen!2sfi" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+            <p>copyright &copy; 2023;</p>
           </div>
         </footer>
       </div>

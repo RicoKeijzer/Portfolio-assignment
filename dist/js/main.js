@@ -33,6 +33,7 @@ console.log(scrollContainer); // check
 // states
 let pageState = 1;
 let headerState = { show: true, showmenu: true };
+let menuItemClicked = true;
 
 let scrollTop = 0;
 
@@ -54,6 +55,14 @@ const contactSection = document.querySelector("#nav-contacts");
 
 // for background sliders
 const sliderContainer = document.querySelector(".slider-container");
+
+const menuItems = document.querySelectorAll("a");
+menuItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    menuItemClicked = true;
+    console.log(item);
+  });
+});
 
 // scrollin event for listeners
 scrollContainer.addEventListener("scroll", () => {
@@ -84,23 +93,25 @@ scrollContainer.addEventListener("scroll", () => {
     updateMenuState(menuLogo, false, "show");
     updateMenuState(sliderContainer, false, "show-menu");
   }
-
-  //next we will check the show menu state separatly
-  if (headerState.showmenu) {
-    // check if scrollbar is BIGGER then previous scrollbar
-    // and check that during the first "menuHeight" pixels the menu bar will not get closed
-    if (newScrollTop >= scrollTop && newScrollTop > menuHeight) {
-      headerState.showmenu = false;
-      updateMenuState(menuNav, false, "show-menu");
+  if (!menuItemClicked) {
+    //next we will check the show menu state separatly
+    if (headerState.showmenu) {
+      // check if scrollbar is BIGGER then previous scrollbar
+      // and check that during the first "menuHeight" pixels the menu bar will not get closed
+      if (newScrollTop >= scrollTop && newScrollTop > menuHeight) {
+        headerState.showmenu = false;
+        updateMenuState(menuNav, false, "show-menu");
+      }
+    } else {
+      // check if scrollbar is SMALLER then previous scrollbar
+      if (newScrollTop <= scrollTop) {
+        headerState.showmenu = true;
+        updateMenuState(menuNav, true, "show-menu");
+      }
     }
   } else {
-    // check if scrollbar is SMALLER then previous scrollbar
-    if (newScrollTop <= scrollTop) {
-      headerState.showmenu = true;
-      updateMenuState(menuNav, true, "show-menu");
-    }
+    menuItemClicked = false;
   }
-
   //------------------------------------------------------------------//
   //- THIS SECTION WILL HIGHLIGHT THE MENU BASED ON LOCATION ON SITE -//
   //------------------------------------------------------------------//
@@ -121,50 +132,12 @@ scrollContainer.addEventListener("scroll", () => {
     const anchorElement = document.querySelector(query);
     //console.log(anchorElement);
     updateMenuState(anchorElement, isInViewport(element), "current");
-
-    //if (isInViewport(element)) {
-    //  const query = `a[href^='#${element.id}']`;
-    //  const anchorElement = document.querySelector(query);
-    //  //console.log(anchorElement);
-    //  updateMenuState(anchorElement, true, "current");
-    //}
   };
-
-  //if (isInViewport(current, viewHeight)) {
-  //  console.log("Yes");
-  //} else {
-  //  updateMenuState(currentMenu, false, "current");
-  //  console.log("is this read");
 
   CheckMenuItemIfCurrent(homeSection);
   CheckMenuItemIfCurrent(aboutSection);
   CheckMenuItemIfCurrent(projectSection);
   CheckMenuItemIfCurrent(contactSection);
-
-  //const rect = aboutSection.getBoundingClientRect();
-  //console.log(`top ${rect.top} botom ${rect.bottom}`);
-  /*
-    const isHome = isInViewport(homeSection, viewHeight);
-    if (isHome) {
-      const query = `a[href^='#${homeSection.id}']`;
-      const el = document.querySelector(query);
-      console.log(el);
-      updateMenuState(el, true, "current");
-    }
-    const isAbout = isInViewport(aboutSection, viewHeight);
-    console.log("is this read");
-    //const isHome = isInViewport(homeSection, viewHeight);
-    if (isAbout) {
-      const query = `a[href^='#${aboutSection.id}']`;
-      const el = document.querySelector(query);
-      console.log(el);
-      updateMenuState(el, true, "current");
-    }
-
-    const isproject = isInViewport(projectSection, viewHeight);
-    const isContact = isInViewport(contactSection, viewHeight);
-  */
-  //}
 
   // update scrolltop counter to current counter
   scrollTop = newScrollTop;

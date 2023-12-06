@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/connections-main.css" />
-    <title>Document</title>
+
+    <title>Connections game</title>
   </head>
   <body background-color="#ffffff" width="100%" heigh="100%">
     <div class="connection-game">
@@ -12,6 +13,11 @@
       <div class="grid-container-btn" id="submit-btn-game1">Submit</div>
     </div>
 
-    <script type="module" src="js/connections.js"></script>
+    <script type="module">
+      import { startConnectionsgame } from "./js/connections.js";
+      startConnectionsgame(
+        '{"game":1,"description":"connection eample","results":[{"description":"colors","group":1,"items":["Blue", "Red", "Yellow", "Black"]},{"description":"number", "group":2,"items":["One", "Two", "Three", "Eight"]},{"description":"names","group":3,"items":["john", "Jack", "Jason", "Jacob"]},{"description":"Animals", "group":4,"items":["Cow", "Horse", "Dog", "Cat"]}]}'
+      );
+    </script>
   </body>
 </html>

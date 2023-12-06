@@ -65,6 +65,12 @@
     top: 150px;
     height: calc(100vh - 300px);
   }
+
+  // projects section
+  .footer-container {
+    // adapt projects column number to smaller screen
+    grid-template-columns: repeat(2, 400px);
+  }
 }
 
 // Tablets & Small Laptops
@@ -74,6 +80,26 @@
     font-size: 1em;
   }
 
+  //content and about me section
+  section {
+    &.left-sided {
+      padding-right: 30%;
+    }
+
+    &.right-sided {
+      padding-left: 30%;
+    }
+  }
+
+  // projects section
+  .footer-container {
+    // adapt projects column number to smaller screen
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+
+// smartphones
+@include mediaSm {
   //header logo and nav section
   #menu {
     &-logo {
@@ -98,26 +124,6 @@
   }
   // end header logo and nav section
 
-  //content and about me section
-  section {
-    &.left-sided {
-      padding-right: 30%;
-    }
-
-    &.right-sided {
-      padding-left: 30%;
-    }
-  }
-
-  // projects section
-  .footer-container {
-    // adapt projects column number to smaller screen
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-// smartphones
-@include mediaSm {
   // content and about me section
   section {
     &.left-sided {

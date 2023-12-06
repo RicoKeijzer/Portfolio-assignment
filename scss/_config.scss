@@ -6,27 +6,31 @@
 //#f0ead8
 //#c5bcaa
 
+// header
 $primary-menu-color: #f9f3e8;
-$secondary-menu-color: #0e0e0e;
-$primary-logo-color: #0e0e0e;
-$logo-background-opacity: 0.9;
+$secondary-menu-color: #494640;
+$primary-logo-color: #494640;
 $secondary-logo-color: #e0e0e0;
+$logo-background-opacity: 0.9;
+$headerheight: 75px;
+$header-extended-height: 400px;
 
-$primary-light-color: #ffffff;
-$primary-dark-color: #0e0e0e;
+//
+$primary-light-color: #f9f3e8;
+$primary-dark-color: #494640;
 $content-opacity: 0.7;
 
-$footer-primary-color: #ffffff;
-$footer-secondary-color: #d0d0d0;
+// Project and contact
+$footer-primary-color: #f9f3e8;
+$footer-secondary-color: #e1dbc9;
 
+//
 $primary-color: #f9f3e8;
 $secondary-color: #f0ead8;
 
 $selected-color: #222dd4;
 $secondary-background: #1b2227;
 $primary-contrast-color: #1b2227;
-$headerheight: 75px;
-$header-extended-height: 400px;
 
 @mixin easeIn {
   transition: all 0.5s ease-in;
@@ -56,25 +60,25 @@ $header-extended-height: 400px;
 
 // Media Query Mixins
 @mixin mediaSm {
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 650px) {
     @content;
   }
 }
 
 @mixin mediaMd {
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 999px) {
     @content;
   }
 }
 
 @mixin mediaLg {
-  @media screen and (min-width: 769px) and (max-width: 1170px) {
+  @media screen and (min-width: 1000px) and (max-width: 1330px) {
     @content;
   }
 }
 
 @mixin mediaXl {
-  @media screen and (min-width: 1171px) {
+  @media screen and (min-width: 1331px) {
     @content;
   }
 }
