@@ -108,6 +108,7 @@ header {
   }
 }
 
+// highlight for the menu button related to the active page
 .current {
   background-color: darken($primary-menu-color, 25%);
 }

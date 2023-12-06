@@ -1,5 +1,4 @@
-@import "config";
-
+//SCSS for all background slides
 $slide_1: url(../img/bg_imgA.jpg);
 $slide_2: url(../img/bg_imgB.jpg);
 $slide_3: url(../img/bg_imgC.jpg);
@@ -9,21 +8,22 @@ $slide_6: url(../img/bg_imgB.jpg);
 
 // background slider section
 .slider-container {
+  //positioning and sizing
   left: 0px;
   right: 0px;
   bottom: 0px;
   top: 0px;
-
   z-index: -3;
   position: fixed;
 
-  background-repeat: no-repeat;
-  background-size: cover;
+  // Why did I put this here?
   scroll-snap-align: start;
 
+  // animation
   transform: translateY(0px);
   transition: transform 0.5s ease-out;
 
+  // when on top of the page when the header is down we want to offset the image a bit.
   &.show-menu {
     transform: translateY(75px);
     transition: transform 0.5s ease-out;
@@ -33,28 +33,32 @@ $slide_6: url(../img/bg_imgB.jpg);
   transition: background-image 0.5s ease-in;
 
   &.slide-1 {
-    background: $slide_1;
+    background: $slide_1 center center;
+    background-size: cover;
   }
 
   &.slide-2 {
-    background: $slide_2;
+    background: $slide_2 center center;
+    background-size: cover;
   }
 
   &.slide-3 {
-    background: $slide_3;
+    background: $slide_3 center center;
+    background-size: cover;
   }
 
   &.slide-4 {
-    background: $slide_4;
+    background: $slide_4 center center;
+    background-size: cover;
   }
 
   &.slide-5 {
-    background: $slide_5;
+    background: $slide_2 center center;
+    background-size: cover;
   }
 
   &.slide-6 {
-    background: $slide_6;
+    background: $slide_3 center center;
+    background-size: cover;
   }
 }
-
-@import "media";
