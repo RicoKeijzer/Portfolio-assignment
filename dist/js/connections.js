@@ -23,9 +23,9 @@ const game1Json =
   '{"game":1,"description":"day4","results":[{"description":"colors","group":1,"items":["Blue", "Red", "Yellow", "Black"]},{"description":"number", "group":2,"items":["One", "Two", "Three", "Eight"]},{"description":"names","group":3,"items":["john", "Jack", "Jason", "Jacob"]},{"description":"Animals", "group":4,"items":["Cow", "Horse", "Dog", "Cat"]}]}';
 
 //startConnectionsgame(...game1Json);
-startConnectionsgame(
-  '{"game":1,"description":"day4","results":[{"description":"colors","group":1,"items":["Blue", "Red", "Yellow", "Black"]},{"description":"number", "group":2,"items":["One", "Two", "Three", "Eight"]},{"description":"names","group":3,"items":["john", "Jack", "Jason", "Jacob"]},{"description":"Animals", "group":4,"items":["Cow", "Horse", "Dog", "Cat"]}]}'
-);
+//startConnectionsgame(
+//  '{"game":1,"description":"day4","results":[{"description":"colors","group":1,"items":["Blue", "Red", "Yellow", "Black"]},{"description":"number", "group":2,"items":["One", "Two", "Three", "Eight"]},{"description":"names","group":3,"items":["john", "Jack", "Jason", "Jacob"]},{"description":"Animals", "group":4,"items":["Cow", "Horse", "Dog", "Cat"]}]}'
+//);
 
 console.log("Lets play connections");
 

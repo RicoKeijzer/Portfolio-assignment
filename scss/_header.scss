@@ -1,5 +1,3 @@
-@import "config";
-
 // header section
 header {
   z-index: 10;
@@ -11,20 +9,24 @@ header {
 }
 
 #menu {
+  //styling Logo section
   &-logo {
+    //postitioning
     float: left;
     margin-left: 50px;
 
-    // edit for styling
-    background: $secondary-color;
+    //styling
+    background: rgba($primary-logo-color, $logo-background-opacity);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-
-    text-align: center;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    color: $primary-color;
     padding: 10px 35px;
 
+    //text styling
+    text-align: center;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: $secondary-logo-color;
+
+    //visibility
     opacity: 0;
     transition: opacity 0.5s ease-out;
 
@@ -35,57 +37,67 @@ header {
     }
   }
 
-  // nav bar in the top header
+  //styling nav bar in the top header
   &-nav {
+    //positioning & orientation
     display: flex;
     flex-flow: row wrap;
+    float: right;
+    overflow: hidden;
+
+    //placement from side
+    margin-right: 50px;
+
+    //inner placements
     align-items: center;
     justify-content: center;
-    float: right;
-    margin-right: 50px;
-    overflow: hidden;
-    background-color: transparent;
 
+    //visibility
+    background-color: $primary-menu-color;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+
+    //add visibility
     &.show-menu {
-      background: $primary-color;
+      opacity: 1;
+      transition: opacity 0.5s ease-in;
     }
 
-    &.show-menu > div {
+    //drop items in from the top
+    &.show-menu > a {
       transform: translateY(0px);
     }
   }
 
-  &-nav > div {
+  //drop items out to the top
+  &-nav > a {
     transform: translateY(-100px);
   }
 }
 
+// styling nav buttons
 .nav-item {
-  //  styling to be edit
-  height: 50px;
-  width: 50px;
-  padding: 10px;
-
+  //usability
   cursor: pointer;
 
-  background: $primary-color;
+  //sizing
+  height: 50px;
+  width: 50px;
 
+  //styling
+  padding: 10px;
+  background: $primary-menu-color;
+
+  color: $secondary-menu-color;
+
+  //animations
   transition: transform 0.5s ease-out;
 
-  & > p {
-    color: $primary-contrast-color;
-    text-wrap: nowrap;
-    text-align: center;
+  // resize svg images
+  & > img {
+    height: 50px;
+    width: 50px;
   }
-
-  // keep transition
-}
-
-$slide_8: url(../img/icons/contact.svg);
-#contacts {
-  src: $slide_8;
-  height: 800px;
-  width: 800px;
 }
 
 // for loop to make each item slower
@@ -94,5 +106,3 @@ $slide_8: url(../img/icons/contact.svg);
     transition-delay: $x * 0.1s;
   }
 }
-
-@import "media";

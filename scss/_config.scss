@@ -1,11 +1,27 @@
+// find color pallets https://www.color-hex.com/color-palette/1031271
+
+//#f9f3e8
+//#d6cca8
+//#e1dbc9
+//#f0ead8
+//#c5bcaa
+
+$primary-menu-color: #f9f3e8;
+$secondary-menu-color: #0e0e0e;
+$primary-logo-color: #0e0e0e;
+$logo-background-opacity: 0.9;
+$secondary-logo-color: #e0e0e0;
+
 $primary-light-color: #ffffff;
 $primary-dark-color: #0e0e0e;
+$content-opacity: 0.7;
 
 $footer-primary-color: #ffffff;
 $footer-secondary-color: #d0d0d0;
 
-$primary-color: #fff;
-$secondary-color: #b0d2ee;
+$primary-color: #f9f3e8;
+$secondary-color: #f0ead8;
+
 $selected-color: #222dd4;
 $secondary-background: #1b2227;
 $primary-contrast-color: #1b2227;
@@ -46,7 +62,7 @@ $header-extended-height: 400px;
 }
 
 @mixin mediaMd {
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 700px) {
     @content;
   }
 }

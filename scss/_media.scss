@@ -1,12 +1,6 @@
 @import "config";
 // Widescreens
 @include mediaXl {
-  #scroll-container {
-    &p {
-      color: blue;
-    }
-  }
-
   section {
     &.left-sided {
       padding-right: 50%;
@@ -75,16 +69,36 @@
 
 // Tablets & Small Laptops
 @include mediaMd {
+  // generic styling
   p {
     font-size: 1em;
   }
 
-  #scroll-container {
-    &p {
-      color: red;
+  //header logo and nav section
+  #menu {
+    &-logo {
+      left: 15px;
+    }
+
+    //move nave bar to side
+    &-nav {
+      //change orientation
+      flex-flow: column wrap;
+      margin-right: 0px;
+
+      //drop items in from the side
+      &.show-menu > a {
+        transform: translateX(0px);
+      }
+    }
+    //drop items out to the side
+    &-nav > a {
+      transform: translateX(100px);
     }
   }
+  // end header logo and nav section
 
+  //content and about me section
   section {
     &.left-sided {
       padding-right: 30%;
@@ -95,63 +109,29 @@
     }
   }
 
-  //.portfolio {
-  // min-height: 60vh;
-  //}
-  //.content {
-  //flex: 40%;
-  //}
+  // projects section
+  .footer-container {
+    // adapt projects column number to smaller screen
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-// Smartphones
+// smartphones
 @include mediaSm {
-  #scroll-container {
-    &p {
-      color: green;
-    }
-  }
-
+  // content and about me section
   section {
     &.left-sided {
-      padding-left: 25px;
-      padding-right: 25px;
+      padding-right: 55px;
     }
 
     &.right-sided {
-      padding-left: 25px;
-      padding-right: 25px;
+      padding-left: 55px;
     }
   }
 
-  //.portfolio {
-  //min-height: 80vh;
-  //width: 60vw;
-
-  // grid-template-columns: 50vw;
-  // justify-items: center;
-  //}
-  //makes columns in portfolio
-  //.content {
-  //flex: 60%;
-  //}
-
-  // header and navigation menu
-  #menu {
-    &-logo {
-      margin-left: 15px;
-    }
-
-    &-nav {
-      flex-flow: column wrap;
-      margin-right: 0px;
-
-      &.show-menu > div {
-        transform: translateX(0px);
-      }
-    }
-
-    &-nav > div {
-      transform: translateX(100px);
-    }
+  // projects section
+  .footer-container {
+    // adapt projects column number to smaller screen
+    grid-template-columns: repeat(1, 300px);
   }
 }
