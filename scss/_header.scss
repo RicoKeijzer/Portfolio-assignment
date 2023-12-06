@@ -93,11 +93,23 @@ header {
   //animations
   transition: transform 0.5s ease-out;
 
+  &:hover {
+    background-color: darken($primary-menu-color, 10%);
+  }
+
+  &:active {
+    background-color: darken($primary-menu-color, 20%);
+  }
+
   // resize svg images
   & > img {
     height: 50px;
     width: 50px;
   }
+}
+
+.current {
+  background-color: darken($primary-menu-color, 25%);
 }
 
 // for loop to make each item slower

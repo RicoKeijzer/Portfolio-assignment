@@ -144,9 +144,16 @@ header {
   background: #f9f3e8;
   color: #0e0e0e;
   transition: transform 0.5s ease-out; }
+  .nav-item:hover {
+    background-color: #eedec0; }
+  .nav-item:active {
+    background-color: #e4c997; }
   .nav-item > img {
     height: 50px;
     width: 50px; }
+
+.current {
+  background-color: #dfbe83; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -329,7 +336,7 @@ footer {
     justify-content: center;
     align-items: center; }
   footer .main-footer {
-    min-height: 200px;
+    min-height: 75vh;
     background-color: #d0d0d0;
     padding: 15px; }
 

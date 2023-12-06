@@ -1,3 +1,6 @@
+//-----------------------------//
+//-----for advent calender-----//
+//-----------------------------//
 // Select DOM Items
 const contentItems = document.querySelectorAll(".content");
 const contentCloser = document.querySelector(".content-closer");
@@ -41,6 +44,13 @@ const menuHeight = 50; //vh
 //const header = document.querySelector("#main-header");
 const menuLogo = document.querySelector("#menu-logo");
 const menuNav = document.querySelector("#menu-nav");
+
+// for menu coloring
+const homeSection = document.querySelector("#nav-home");
+const aboutSection = document.querySelector("#nav-about-me");
+const projectSection = document.querySelector("#nav-projects");
+const contactSection = document.querySelector("#nav-contacts");
+//const sections = [homeSection, aboutSection, projectSection, contactSection];
 
 // for background sliders
 const sliderContainer = document.querySelector(".slider-container");
@@ -91,6 +101,71 @@ scrollContainer.addEventListener("scroll", () => {
     }
   }
 
+  //------------------------------------------------------------------//
+  //- THIS SECTION WILL HIGHLIGHT THE MENU BASED ON LOCATION ON SITE -//
+  //------------------------------------------------------------------//
+
+  //const currentMenu = document.querySelector(".current");
+  //const current = document.querySelector(currentMenu.getAttribute("href"));
+
+  const isInViewport = (element) => {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= viewHeight / 2 && rect.bottom >= viewHeight / 2
+      //rect.top <= viewHeight / 2 && Math.abs(rect.bottom) >= viewHeight / 2
+    );
+  };
+
+  const CheckMenuItemIfCurrent = (element) => {
+    const query = `a[href^='#${element.id}']`;
+    const anchorElement = document.querySelector(query);
+    //console.log(anchorElement);
+    updateMenuState(anchorElement, isInViewport(element), "current");
+
+    //if (isInViewport(element)) {
+    //  const query = `a[href^='#${element.id}']`;
+    //  const anchorElement = document.querySelector(query);
+    //  //console.log(anchorElement);
+    //  updateMenuState(anchorElement, true, "current");
+    //}
+  };
+
+  //if (isInViewport(current, viewHeight)) {
+  //  console.log("Yes");
+  //} else {
+  //  updateMenuState(currentMenu, false, "current");
+  //  console.log("is this read");
+
+  CheckMenuItemIfCurrent(homeSection);
+  CheckMenuItemIfCurrent(aboutSection);
+  CheckMenuItemIfCurrent(projectSection);
+  CheckMenuItemIfCurrent(contactSection);
+
+  //const rect = aboutSection.getBoundingClientRect();
+  //console.log(`top ${rect.top} botom ${rect.bottom}`);
+  /*
+    const isHome = isInViewport(homeSection, viewHeight);
+    if (isHome) {
+      const query = `a[href^='#${homeSection.id}']`;
+      const el = document.querySelector(query);
+      console.log(el);
+      updateMenuState(el, true, "current");
+    }
+    const isAbout = isInViewport(aboutSection, viewHeight);
+    console.log("is this read");
+    //const isHome = isInViewport(homeSection, viewHeight);
+    if (isAbout) {
+      const query = `a[href^='#${aboutSection.id}']`;
+      const el = document.querySelector(query);
+      console.log(el);
+      updateMenuState(el, true, "current");
+    }
+
+    const isproject = isInViewport(projectSection, viewHeight);
+    const isContact = isInViewport(contactSection, viewHeight);
+  */
+  //}
+
   // update scrolltop counter to current counter
   scrollTop = newScrollTop;
 
@@ -133,4 +208,31 @@ scrollContainer.addEventListener("scroll", () => {
       updateSlide(relativeScrollPage);
     }
   }
+
+  //updateMenuStates(viewHeight);
 });
+
+function updateMenuStates(viewHeight) {
+  const isHome = isInViewport(homeSection, viewHeight);
+  const isAbout = isInViewport(aboutSection, viewHeight);
+  const isproject = isInViewport(projectSection, viewHeight);
+  const isContact = isInViewport(contactSection, viewHeight);
+
+  console.log(
+    `home: ${isHome} - about: ${isAbout} - project: ${isproject} - contact: ${isContact}`
+  );
+
+  //const rect = contactSection.getBoundingClientRect();
+  //console.log(`top ${rect.top} botom ${rect.bottom}`);
+}
+
+//----------------------------------------------//
+//-------Additional functions found online------//
+//----------------------------------------------//
+
+// https://www.javascripttutorial.net/dom/css/check-if-an-element-is-visible-in-the-viewport/
+//function isInViewport(element, viewHeight) {
+//  const rect = element.getBoundingClientRect();
+
+//  return rect.top <= viewHeight / 2 && Math.abs(rect.bottom) >= viewHeight / 2;
+//}

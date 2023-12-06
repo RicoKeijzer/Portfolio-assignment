@@ -38,7 +38,7 @@ footer {
     align-items: center;
   }
   .main-footer {
-    min-height: 200px;
+    min-height: 75vh;
     background-color: $footer-secondary-color;
     padding: 15px;
   }
@@ -49,7 +49,7 @@ footer {
   justify-content: center;
 }
 
-//work and projects
+// projects
 .footer-container {
   display: grid;
   grid-gap: 2rem;
