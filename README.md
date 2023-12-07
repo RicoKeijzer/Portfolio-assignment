@@ -1,6 +1,7 @@
 # Portfolio-assignment
 
 My portfolio assignment for LUT course: Front end 2023-24
+Assignment from Rico Keijzer
 
 How to use:
 -Open the published webpage from https://ricokeijzer.github.io/Portfolio-assignment/dist
