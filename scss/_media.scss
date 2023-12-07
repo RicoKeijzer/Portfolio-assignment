@@ -140,4 +140,10 @@
     // adapt projects column number to smaller screen
     grid-template-columns: repeat(1, 300px);
   }
+
+  .contact-container {
+    height: 75vh;
+
+    grid-template-columns: repeat(1, 350px);
+  }
 }

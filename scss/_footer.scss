@@ -1,31 +1,6 @@
-//
-$project-button-diameter: 45px;
-$project-button-border-offset: 25px;
-$github-color: #333333f0;
-$project-info-color: rgba(29, 49, 160, 0.941);
-
-// set text color
-@function set-offset-for-project-button() {
-  @return calc(100% - 70px);
-}
-
-rect {
-  // positioning and sizing
-  width: 100%;
-  height: 100%;
-
-  &.dialogonal {
-    //fill: url(#pattern-checkers);
-    fill: url(#diagonalHatch);
-    color: orange;
-  }
-}
-
 footer {
   // positioning and sizing
   width: 100%;
-  //display: grid;
-  //grid-template-columns: 1fr;
 
   // styling
   background-color: $footer-primary-color;
@@ -33,15 +8,19 @@ footer {
 
   // project text field
   .pre-text {
-    padding: 15px;
+    // positioning and sizing
     display: flex;
     justify-content: center;
     text-align: center;
+
+    // styling
+    padding: 15px;
     color: darken($footer-secondary-color, 25%);
   }
 
   // project section
   .pre-footer {
+    // positioning and sizing
     min-height: 500px;
     padding-top: 75px;
     padding-bottom: 75px;
@@ -53,17 +32,63 @@ footer {
 
   //contact section
   .main-footer {
-    min-height: 100vh;
+    // positioning and sizing
+    //min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    // styling
     background-color: $footer-secondary-color;
     padding: 15px;
   }
 }
 
-// projects
-.footer-container {
+.contact-container {
+  height: 75vh;
   display: grid;
   grid-column-gap: 30px;
-  //grid-row-gap: 0px;
+  grid-template-columns: repeat(2, 300px);
+
+  & > iframe {
+    height: 100%;
+    width: 100%;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & > div {
+      padding: 15px;
+    }
+
+    .text-secondary {
+      font-weight: bold;
+      color: darken($footer-secondary-color, 20%);
+    }
+  }
+}
+
+.copyright {
+  // positioning and sizing
+  width: 100%;
+  text-align: center;
+
+  // styling
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: darken($footer-secondary-color, 20%);
+}
+
+// projects
+.footer-container {
+  // positioning and sizing
+  display: grid;
+  grid-column-gap: 30px;
   grid-template-columns: repeat(4, 300px);
 }
 
@@ -75,25 +100,22 @@ footer {
   top: 0;
   bottom: 0;
 
+  // depending on internal sizes
   height: 630px;
 }
 
 .item {
   flex-direction: column;
-
   position: relative;
   min-width: 100%;
-  //min-height: 300px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   margin-bottom: 30px;
-
   border: #333 3px solid;
   border-radius: 25px;
-  //margin: 10px;
 
   top: 0;
   bottom: 0;
@@ -122,7 +144,6 @@ footer {
 }
 
 .project-image {
-  //padding: 5px;
   width: 100%;
   max-height: 300px;
   overflow: hidden;
@@ -135,6 +156,7 @@ footer {
   }
 }
 
+// buttons
 .btn {
   //positioning
   position: absolute;
@@ -172,8 +194,7 @@ footer {
 .btn-icon-right {
   @extend .btn;
   z-index: 4;
-  //positioning
-  //olor: #fff;
+  // positioning
   left: set-offset-for-project-button();
   right: $project-button-border-offset;
   background: $github-color;
@@ -190,7 +211,6 @@ footer {
   right: $project-button-border-offset;
 
   //styling
-  //background: darken($primary-color, 50);
   background: none;
   color: set-text-color($github-color);
 

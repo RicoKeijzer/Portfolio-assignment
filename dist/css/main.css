@@ -255,24 +255,20 @@ header {
   section.right-sided {
     padding-left: 55px; }
   .footer-container {
-    grid-template-columns: repeat(1, 300px); } }
-
-rect {
-  width: 100%;
-  height: 100%; }
-  rect.dialogonal {
-    fill: url(#diagonalHatch);
-    color: orange; }
+    grid-template-columns: repeat(1, 300px); }
+  .contact-container {
+    height: 75vh;
+    grid-template-columns: repeat(1, 350px); } }
 
 footer {
   width: 100%;
   background-color: #f9f3e8;
   border-top: 4px #e1dbc9 solid; }
   footer .pre-text {
-    padding: 15px;
     display: flex;
     justify-content: center;
     text-align: center;
+    padding: 15px;
     color: #b3a477; }
   footer .pre-footer {
     min-height: 500px;
@@ -282,9 +278,38 @@ footer {
     justify-content: center;
     align-items: center; }
   footer .main-footer {
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #e1dbc9;
     padding: 15px; }
+
+.contact-container {
+  height: 75vh;
+  display: grid;
+  grid-column-gap: 30px;
+  grid-template-columns: repeat(2, 300px); }
+  .contact-container > iframe {
+    height: 100%;
+    width: 100%; }
+  .contact-container .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .contact-container .contact-info > div {
+      padding: 15px; }
+    .contact-container .contact-info .text-secondary {
+      font-weight: bold;
+      color: #bdaf87; }
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: #bdaf87; }
 
 .footer-container {
   display: grid;
@@ -529,4 +554,7 @@ section {
   section.right-sided {
     padding-left: 55px; }
   .footer-container {
-    grid-template-columns: repeat(1, 300px); } }
+    grid-template-columns: repeat(1, 300px); }
+  .contact-container {
+    height: 75vh;
+    grid-template-columns: repeat(1, 350px); } }

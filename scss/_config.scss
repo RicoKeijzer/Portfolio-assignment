@@ -15,7 +15,7 @@ $logo-background-opacity: 0.9;
 $headerheight: 75px;
 $header-extended-height: 400px;
 
-//
+// content
 $primary-light-color: #f9f3e8;
 $primary-dark-color: #494640;
 $content-opacity: 0.7;
@@ -24,14 +24,20 @@ $content-opacity: 0.7;
 $footer-primary-color: #f9f3e8;
 $footer-secondary-color: #e1dbc9;
 
-//
+// projects
+$project-button-diameter: 45px;
+$project-button-border-offset: 25px;
+$github-color: #333333f0;
+$project-info-color: rgba(29, 49, 160, 0.941);
+
+// general
 $primary-color: #f9f3e8;
 $secondary-color: #f0ead8;
-
 $selected-color: #222dd4;
 $secondary-background: #1b2227;
 $primary-contrast-color: #1b2227;
 
+// mixins
 @mixin easeIn {
   transition: all 0.5s ease-in;
 }
@@ -49,6 +55,7 @@ $primary-contrast-color: #1b2227;
   transition: color 0.5s ease-out;
 }
 
+// functions
 // set text color
 @function set-text-color($color) {
   @if (lightness($color) > 40) {
@@ -56,6 +63,11 @@ $primary-contrast-color: #1b2227;
   } @else {
     @return #fff;
   }
+}
+
+// set offset for project button
+@function set-offset-for-project-button() {
+  @return calc(100% - 70px);
 }
 
 // Media Query Mixins
