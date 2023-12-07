@@ -1,3 +1,6 @@
+html {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+
 .background {
   z-index: 0;
   margin-left: 15vw;
@@ -39,7 +42,6 @@
   .journalsection.entry > div {
     overflow: hidden; }
   .journalsection.header {
-    height: 5vh;
     border-top-left-radius: 25pt;
     border-top-right-radius: 25pt;
     border-bottom-left-radius: 0pt;
@@ -47,6 +49,8 @@
     background-color: #f8fdf4;
     border: solid 3px #91dc5a;
     border-bottom: transparent; }
+    .journalsection.header h1 {
+      text-align: center; }
   .journalsection.footer {
     height: 5vh;
     border-top-left-radius: 0pt;

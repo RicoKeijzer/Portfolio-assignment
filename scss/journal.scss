@@ -14,6 +14,10 @@ $journal-border: 3px;
 $background-opacity: 0.7;
 $default-entry-height: 50px;
 
+html {
+  //scroll-behavior: smooth; // removed since it didn't work and prevented the menu bar to stay when clicked
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 // Background of journal. SVG animation needed
 .background {
   z-index: 0;
@@ -81,7 +85,7 @@ $default-entry-height: 50px;
 
   // Journal header. Mainly added for the roundings and stying
   &.header {
-    height: 5vh;
+    //height: 5vh;
 
     border-top-left-radius: 25pt;
     border-top-right-radius: 25pt;
@@ -93,6 +97,10 @@ $default-entry-height: 50px;
 
     border: solid $journal-border $springcolors-main;
     border-bottom: transparent;
+
+    h1 {
+      text-align: center;
+    }
   }
 
   // Journal footer. Mainly added for the roundings and stying
