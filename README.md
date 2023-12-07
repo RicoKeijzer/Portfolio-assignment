@@ -8,3 +8,7 @@ How to use:
 -In the projects section click on the I-icon from Journal-project to see the journal, or go to https://ricokeijzer.github.io/Portfolio-assignment/dist/journal.html
 -In the projects section click on the I-icon from Connections Project to play a game of Connections.
 -Resize the view to see the responsive design
+
+see coursework in https://github.com/RicoKeijzer/Coursework
+see journal in https://ricokeijzer.github.io/Portfolio-assignment/dist/journal.html
+See project in https://ricokeijzer.github.io/Portfolio-assignment/dist
